@@ -1,19 +1,65 @@
 "use strict";
-const goods = [
-  { title: 'Shirt', price: 150 },
-  { title: 'Socks', price: 50 },
-  { title: 'Jacket', price: 350 },
-  { title: 'Shoes', price: 250 },
-];
 
-const renderGoodsItem = (title = "Product", price = 0) => {
-  return `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
-};
-
-const renderGoodsList = (list = []) => {
-  let goodsList = list.map(item => renderGoodsItem(item.title, item.price));
-  document.querySelector('.goods-list').innerHTML = goodsList.join("");
+class GoodsItem {
+  constructor(title, price, img) {
+    this.title = title;
+    this.price = price;
+    this.img = img;
+  }
+  render() {
+    return `<div class="goods-item"><img alt="photo" src="images/${this.img}"><h3>${this.title}</h3><p>${this.price}</p></div>`;
+  }
 }
-// Это потому-что goodsList это масив а элементы массива записаны через запятую и они сразу записываются  в найденый div,
-//   чтобы это исправить я добавила метод join
-renderGoodsList(goods);
+class GoodsList {
+  constructor() {
+    this.goods = [];
+  }
+  fetchGoods() {
+    this.goods = [
+      { title: 'Suit', price: 150, img: 'product2.png'},
+      { title: 'Hoodie', price: 50, img: 'product3.png'},
+      { title: 'Jacket', price: 350, img: 'product5.png'},
+      { title: 'Trousers', price: 250, img: 'product4.png'},
+    ];
+  }
+  render() {
+    let listHtml = '';
+    this.goods.forEach(good => {
+      const goodItem = new GoodsItem(good.title, good.price, good.img);
+      listHtml += goodItem.render();
+    });
+    document.querySelector('.goods-list').innerHTML = listHtml;
+  }
+  calculateSumm(){
+    let summ = 0;
+    this.goods.forEach(good => {
+      summ += good.price;
+    });
+    console.log(summ);
+  }
+}
+const list = new GoodsList();
+list.fetchGoods();
+list.render();
+list.calculateSumm();
+
+
+class BasketItem {
+  constructor() {
+
+  }
+  render() {
+
+  }
+}
+class Basket {
+  constructor() {
+
+  }
+  render (){
+
+  }
+  calculateSumm(){
+
+  }
+}
