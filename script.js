@@ -88,31 +88,31 @@ const makeGETRequest = (url) => {
  });
 }
 
-class BasketItem {
-  constructor() {
-
-  }
-  render() {
-
-  }
-}
-class Basket {
-  constructor() {
-
-  }
-  render (){
-
-  }
-  add (){
-
-}
-  delete (){
-
-}
-  calculateSumm(){
-
-  }
-}
+// class BasketItem {
+//   constructor() {
+//
+//   }
+//   render() {
+//
+//   }
+// }
+// class Basket {
+//   constructor() {
+//
+//   }
+//   render (){
+//
+//   }
+//   add (){
+//
+// }
+//   delete (){
+//
+// }
+//   calculateSumm(){
+//
+//   }
+// }
 const list = new GoodsList();
 const promise = list.fetchGoods();
 promise.then(goods => {
