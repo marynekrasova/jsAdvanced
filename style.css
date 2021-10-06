@@ -64,5 +64,17 @@ img {
     border: 1px solid #ebebeb;
     border-radius: 3px;
     font-size: 14px;
-    display: none;
+    /*display: none;*/
+}
+.header-basket {
+    width: 300px;
+}
+.basket-table {
+    width: 300px;
+    margin-left: 10px;
+}
+.basket-summ {
+    width: 280px;
+    display: flex;
+    justify-content: flex-end;
 }
