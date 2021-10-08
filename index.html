@@ -12,33 +12,14 @@
 <div id="app">
 <header class="header">
     <h1></h1>
-    <form >
-        <input type="text" id="search"  class="goods-search" v-model="searchLine">
-        <input type="submit"class="search-button" value="Искать" id="submit" @click.prevent="filterGoods()">
-    </form>
-    <button class="cart-button" type="button" @click.prevent="openBasket()">Корзина</button>
+    <forma :goods="filteredGoods" :searchLine="searchLine"></forma>
+    <button class="cart-button" type="button" @click="openBasket()">Корзина</button>
     <div class="basket_list" v-bind:style="{ display: isVisibleCart}">
-        <table class="header-basket">
-        <tr>
-            <th>Наименование</th><th>Стоимость</th><th>Штук</th><th>Сумма</th>
-        </tr>
-        </table>
-        <table v-for="good in basketGoods" class="basket-table">
-        <tr>
-            <td>{{ good.product_name }}</td><td>{{ good.price }}</td><td>{{ good.count }}</td><td>{{ good.summBasket }}</td>
-        </tr>
-        </table>
-            <div class="basket-summ">Товаров в корзине на сумму:{{ allSumm }}</div>
+    <basket-list :basketGoods="basketGoods" :allSumm="allSumm"></basket-list>
     </div>
 </header>
 <main>
-    <div class="goods-list">
-        <div class="goods-item" v-for="good in filteredGoods">
-            <h3>{{ good.product_name }}</h3>
-            <p>{{ good.price }}</p>
-            <button class="cart-button" type="button" @click.prevent="addProduct(good)">Добавить</button>
-        </div>
-    </div>
+        <goods-list :goods="filteredGoods"></goods-list>
 </main>
 </div>
 

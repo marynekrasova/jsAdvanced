@@ -1,17 +1,84 @@
 "use strict";
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
+Vue.component('goods-list', {
+  props: ['goods'],
+  template: `
+    <div class="goods-list">
+      <goods-item v-for="good in goods" :good="good"></goods-item>
+    </div>
+  `
+});
+
+Vue.component('goods-item', {
+  props: ['good'],
+  template: `
+    <div class="goods-item">
+      <h3>{{ good.product_name }}</h3>
+      <p>{{ good.price }}</p>
+     <button class="cart-button" type="button" @click="addProduct(good)">Добавить</button>
+    </div>
+  `
+});
+
+Vue.component('basket-list', {
+  props: ['basketGoods', 'allSumm'],
+  template: `
+        <div>
+        <table class="header-basket">
+        <tr>
+            <th>Наименование</th><th>Стоимость</th><th>Штук</th><th>Сумма</th>
+        </tr>
+        </table>
+        <basket-item v-for="good in basketGoods" class="basket-table"></basket-item>
+            <div class="basket-summ">Товаров в корзине на сумму:{{ allSumm }}</div>
+        </div>
+  `
+});
+Vue.component('basket-item', {
+  props: ['good'],
+  template: `
+         <tr>
+            <td>{{ good.product_name }}</td><td>{{ good.price }}</td><td>{{ good.count }}</td><td>{{ good.summBasket }}</td>
+         </tr>
+  `
+});
+
+Vue.component('forma', {
+  props: ['goods', 'searchLine'],
+  template: `
+    <form >
+        <input type="text" id="search"  class="goods-search" v-model="searchLine">
+        <input type="submit" class="search-button" value="Искать" id="submit" @click="filterGoods()">
+    </form>
+  `
+});
+
 const app = new Vue({
   el: '#app',
   data: {
     goods: [],
     filteredGoods: [],
-    basketGoods: [],
+    basketGoods: [
+
+        // {
+        //   "id_product": 123,
+        //   "product_name": "Ноутбук",
+        //   "price": 45600,
+        //   "count": 1
+        // },
+        // {
+        //   "id_product": 456,
+        //   "product_name": "Мышка",
+        //   "price": 1000,
+        //   "count": 1
+        // }
+
+    ],
     searchLine: '',
     isVisibleCart: 'none',
     allSumm: 0
   },
-
   methods: {
     makeGETRequest(url)  {
       return new Promise((resolve, reject) => {
