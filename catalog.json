@@ -1,0 +1,46 @@
+[
+  {
+    "id": "78eea680-c166-4d2b-a01d-b6386fc28f0f",
+    "product_name": "Мышка",
+    "price": 100,
+    "imag": "product2.png"
+  },
+  {
+    "id": "5a63587b-7189-4d8d-82cd-374309b39cc7",
+    "product_name": "Клавиатура",
+    "price": 200,
+    "imag": "product3.png"
+  },
+  {
+    "id": "146aa550-9534-48be-8f68-a0f2b38fca5c",
+    "product_name": "Колонки",
+    "price": 130,
+    "imag": "product4.png"
+  },
+  {
+    "id": "10f6106f-7155-49f5-9853-57309f3f4e15",
+    "product_name": "Наушники",
+    "price": 150,
+    "imag": "product5.png"
+  },
+  {
+    "id": "7e5cc9b8-87cf-477d-b2aa-1d0ade23cd0d",
+    "product_name": "Ноутбук",
+    "price": 400,
+    "imag": "product6.png"
+  },
+  {
+    "id": "1bdeadb3-85e8-4fb9-bcf5-256c27e217f5",
+    "product_name": "Коврик",
+    "price": 150,
+    "imag": "product2.png"
+  },
+  {
+    "id": "5c099807-0e51-44ac-8ac4-a65a657299c6",
+    "product_name": "Кресло",
+    "price": 160,
+    "imag": "product2.png"
+  }
+]
+
+

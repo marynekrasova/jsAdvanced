@@ -1,0 +1,24 @@
+{
+  "name": "task7js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marynekrasova/jsAdvanced.git"
+  },
+  "author": "MariaNekrasova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marynekrasova/jsAdvanced/issues"
+  },
+  "homepage": "https://github.com/marynekrasova/jsAdvanced#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-static": "^0.7.11"
+  }
+}
