@@ -37,6 +37,7 @@
     background: lightgray;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .goods-item {
     margin: 30px 0;
@@ -77,4 +78,14 @@ img {
     width: 280px;
     display: flex;
     justify-content: flex-end;
+}
+.del-btn{
+    margin-top: 5px;
+    background-color: #2f2a2d;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    color: #fafafa;
+    border-radius: 5px;
+    transition: all ease-in-out .4s;
+    cursor: pointer;
 }
